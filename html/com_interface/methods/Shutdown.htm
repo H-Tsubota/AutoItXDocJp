@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Method Shutdown
+</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=shift-jis">
+  <link href="../../css/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Method Reference (COM)</h1>
+<font size="+1">Shutdown
+</font>
+<hr size="2">
+<p>システムをシャットダウンします。<br></p>
+
+<p class="codeheader">
+Shutdown ( code )<br>
+</p>
+<p>&nbsp;</p>
+
+<p><b>パラメータ</b></p>
+<table border="1" width="100%" cellspacing="0" cellpadding="3" bordercolor="#C0C0C0">
+  <tr>
+    <td width="15%">code</td>
+    <td width="85%">シャットダウンコードの組み合わせ。注意を参照。</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>返し値</b></p>
+<table width="100%">
+  <tr>
+    <td width="10%">成功:</td>
+    <td width="90%">1を返します。</td>
+  </tr>
+  <tr>
+    <td>失敗:</td>
+    <td>0を返します。</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>注意</b></p>
+シャットダウンコードには次の値を組み合わせて使用することができます。<br>
+0 = ログオフ(Logoff)<br>
+1 = シャットダウン(Shutdown)<br>
+2 = 再起動(Reboot)<br>
+4 = 強制(Force)<br>
+8 = パワーダウン(Power down)<br>
+<br>
+使用したい値を足し合わせてください。例えばシャットダウンとパワーダウンをおこないたい場合はコードは9になります(シャットダウン + パワーダウン = 1 + 8 = 9)<br>
+<br>
+スタンバイと休止は<a href="http://grc.com/wizmo/wizmo.htm">http://grc.com/wizmo/wizmo.htm</a>と言ったサードパーティ製のソフトウェアを使用することで可能です。<br>
+<br>
+<p>&nbsp;</p>
+
+<p><b>関連</b></p>
+<a href="ProcessClose.htm">ProcessClose</a>
+<p>&nbsp;</p>
+
+<p><b>例</b></p>
+<p class="codebox">
+' Force a reboot<br>
+Set oAutoIt = WScript.CreateObject("AutoItX3.Control")<br>
+oAutoIt.Shutdown 6<br>
+<p>&nbsp;</p>
+
+</body>
+</html>

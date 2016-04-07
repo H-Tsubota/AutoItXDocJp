@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Method RunAsSet
+</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=shift-jis">
+  <link href="../../css/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Method Reference (COM)</h1>
+<font size="+1">RunAsSet
+</font>
+<hr size="2">
+<p>Run、RunWaitによる操作中に使用されるユーザー認証情報を初期化します。2000/XP以降のみ。<br></p>
+
+<p class="codeheader">
+RunAsSet ["user", "domain", "password"] [, options]<br>
+</p>
+<p>&nbsp;</p>
+
+<p><b>パラメータ</b></p>
+<table border="1" width="100%" cellspacing="0" cellpadding="3" bordercolor="#C0C0C0">
+  <tr>
+    <td width="15%">username</td>
+    <td width="85%">使用するユーザー名</td>
+  </tr>
+  <tr>
+   <td>domain</td>
+   <td>使用するドメイン名</td>
+  </tr>
+  <tr>
+   <td>password</td>
+   <td>使用するパスワード</td>
+  </tr>
+  <tr>
+   <td>options</td>
+   <td><b>オプション：</b> 0 = ユーザープロファイルをロードしません。 1 = (デフォルト) ユーザープロファイルをロードします。 2 = ネット認証にのみ使用</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>返し値</b></p>
+オペレーティングシステムがこの関数をサポートしていない場合、0を返します。<br>
+それ以外の場合は成功、失敗によらず1を返します（ログイン情報が無効な場合、以降でのRun/RunWaitコマンドが失敗します…）<br>
+<p>&nbsp;</p>
+
+<p><b>注意</b></p>
+この関数によって以降のRun関数、RunWait関数を別のユーザー（例えば管理者）として実行することができます。この関数は2000/XP（以降）のプラットフォームでのみ動作します。NT4ユーザーはNTリソースキットからSUコマンドをインストールして使用する必要があります。<br>
+<br>
+この関数を使用したい場合は"Secondary Logon service"または"RunAs service"を有効にしておく必要があります。<br>
+<br>
+RunAsの設定を解除にするにはRunAsSet()といった様にしてパラメータなしでこの関数を呼びます。<br>
+<br>
+<p>&nbsp;</p>
+
+<p><b>関連</b></p>
+<a href="RunAsSet.htm">RunAsSet</a>, <a href="RunWait.htm">RunWait</a>
+<p>&nbsp;</p>
+
+<p><b>例</b></p>
+<p class="codebox">
+Set oAutoIt = WScript.CreateObject("AutoItX3.Control")<br>
+<br>
+' ローカル管理者アカウントを使う様にRunAsパラメータを設定<br>
+oAutoIt.RunAsSet "Administrator", "MyDom", "adminpassword"<br>
+<br>
+' 管理者としてレジストリエディターを実行<br>
+oAutoIt.RunWait "regedit.exe"<br>
+<br>
+' ユーザーパーミッションをリセット<br>
+oAutoIt.RunAsSet<br>
+<p>&nbsp;</p>
+
+</body>
+</html>

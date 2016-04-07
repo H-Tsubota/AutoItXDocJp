@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Method ToolTip
+</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=shift-jis">
+  <link href="../../css/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Method Reference (COM)</h1>
+<font size="+1">ToolTip
+</font>
+<hr size="2">
+<p>スクリーンの任意の場所にツールチップを作成します。<br></p>
+
+<p class="codeheader">
+ToolTip "text" [, x, y]<br>
+</p>
+<p>&nbsp;</p>
+
+<p><b>パラメータ</b></p>
+<table border="1" width="100%" cellspacing="0" cellpadding="3" bordercolor="#C0C0C0">
+  <tr>
+    <td width="15%">text</td>
+    <td width="85%">ツールチップのテキスト (空の文字列を指定するとツールチップの表示を終了)</td>
+  </tr>
+  <tr>
+   <td>x, y</td>
+   <td>ツールチップのx、y座標</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>返し値</b></p>
+なし。<br>
+<p>&nbsp;</p>
+
+<p><b>注意</b></p>
+x、y座標を省略した場合、チップはマウスカーソルの近くに表示されます。座標によってツールチップがスクリーンからはみ出す場合は表示される様に再配置されます。<br>
+ツールチップはクリアされるか、スクリプトが終了するか、クリックされるまで表示され続けます。ラインフィード文字を使用することで複数行のテキストを持つツールチップを作成できます。<br>
+<p>&nbsp;</p>
+
+<p><b>関連</b></p>
+<a href="../../html\com_interface\methods\TrayTip.htm">TrayTip</a>
+<p>&nbsp;</p>
+
+<p><b>例</b></p>
+<p class="codebox">
+Set oAutoIt = WScript.CreateObject("AutoItX3.Control")<br>
+<br>
+' スクリーンの左上にツールチップを作成します。<br>
+oAutoIt.ToolTip "This is a tooltip", 0, 0<br>
+oAutoIt.Sleep 2000 &nbsp;&nbsp;&nbsp; ' Sleep to give tooltip time to display<br>
+<p>&nbsp;</p>
+
+</body>
+</html>

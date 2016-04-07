@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Method IniRead
+</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=shift-jis">
+  <link href="../../css/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Method Reference (COM)</h1>
+<font size="+1">IniRead
+</font>
+<hr size="2">
+<p>標準形式の.iniファイルから値を読み取ります。<br></p>
+
+<p class="codeheader">
+IniRead "filename", "section", "key", "default"<br>
+</p>
+<p>&nbsp;</p>
+
+<p><b>パラメータ</b></p>
+<table border="1" width="100%" cellspacing="0" cellpadding="3" bordercolor="#C0C0C0">
+  <tr>
+    <td width="15%">filename</td>
+    <td width="85%">.iniファイルのファイル名</td>
+  </tr>
+  <tr>
+   <td>section</td>
+   <td>.iniファイル内のセクション名</td>
+  </tr>
+  <tr>
+   <td>key</td>
+   <td>.iniファイル内のキー名</td>
+  </tr>
+  <tr>
+   <td>default</td>
+   <td>要求したキーが見つからなかった場合、返されるデフォルト値</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>返し値</b></p>
+<table width="100%">
+  <tr>
+    <td width="10%">成功:</td>
+    <td width="90%">要求したキーの値が返されます。</td>
+  </tr>
+  <tr>
+    <td>失敗:</td>
+    <td>要求したキーが見つからなかった場合、<i>default</i>文字列が返されます。</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>注意</b></p>
+標準的なINIファイルは次のようになっています。<br>
+<i>[Section名]<br>
+Key=Value</i><br>
+<br>
+<p>&nbsp;</p>
+
+<p><b>関連</b></p>
+<a href="IniDelete.htm">IniDelete</a>, <a href="IniWrite.htm">IniWrite</a>, <a href="../../html\com_interface\methods\FileReadLine.htm">FileReadLine</a>
+<p>&nbsp;</p>
+
+<p><b>例</b></p>
+<p class="codebox">
+Set oAutoIt = WScript.CreateObject("AutoItX3.Control")<br>
+var = IniRead "C:\Temp\myfile.ini", "section2", "key", "NotFound"<br>
+WScript.Echo "Result: " & var<br>
+<p>&nbsp;</p>
+
+</body>
+</html>

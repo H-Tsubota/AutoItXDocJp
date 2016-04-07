@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Method ProcessWaitClose
+</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=shift-jis">
+  <link href="../../css/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Method Reference (COM)</h1>
+<font size="+1">ProcessWaitClose
+</font>
+<hr size="2">
+<p>指定したプロセスが存在しなくなるまでスクリプトの実行を一時停止します。<br></p>
+
+<p class="codeheader">
+ProcessWaitClose "process" [, timeout]<br>
+</p>
+<p>&nbsp;</p>
+
+<p><b>パラメータ</b></p>
+<table border="1" width="100%" cellspacing="0" cellpadding="3" bordercolor="#C0C0C0">
+  <tr>
+    <td width="15%">process</td>
+    <td width="85%">調べるプロセスの名前もしくはPID</td>
+  </tr>
+  <tr>
+   <td>timeout</td>
+   <td><b>オプション：</b>最大でどれくらい待つかを指定します。デフォルトは無期限。</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>返し値</b></p>
+成功: 1を返します。<br>
+失敗: タイムアウトした場合、0を返します。<br>
+<p>&nbsp;</p>
+
+<p><b>注意</b></p>
+プロセス名はフルパスを指定しなくても問題ありません。例）"notepad.exe"　"winword.exe"<br>
+PIDは各プロセスごとに異なるな番号です。PIDはProcessExistまたはRunコマンドによって得ることができます。<br>
+Windows NT 4.0下での動作の場合、ProcessWaitCloseはPSAPI.DLLを必要とします（AutoItインストールフォルダに含まれています）。<br>
+プロセスは約250ミリ秒ごとに調べられます。<br>
+<br>
+<p>&nbsp;</p>
+
+<p><b>関連</b></p>
+<a href="ProcessClose.htm">ProcessClose</a>, <a href="ProcessExists.htm">ProcessExists</a>, <a href="ProcessWaitClose.htm">ProcessWaitClose</a>, <a href="RunWait.htm">RunWait</a>, <a href="WinWaitClose.htm">WinWaitClose</a>
+<p>&nbsp;</p>
+
+<p><b>例</b></p>
+<p class="codebox">
+Set oAutoIt = WScript.CreateObject("AutoItX3.Control")<br>
+<br>
+'すべてのnotepad.exeが閉じるまで待機<br>
+oAutoIt.ProcessWaitClose "notepad.exe"<br>
+<br>
+; 特定の特定のnotepadのインスタンスが閉じるまで待機<br>
+PID = oAutoIt.Run("notepad.exe")<br>
+oAutoIt.ProcessWaitClose(PID)<br>
+<p>&nbsp;</p>
+
+</body>
+</html>

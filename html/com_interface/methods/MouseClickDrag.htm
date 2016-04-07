@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Method MouseClickDrag
+</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=shift-jis">
+  <link href="../../css/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Method Reference (COM)</h1>
+<font size="+1">MouseClickDrag
+</font>
+<hr size="2">
+<p>マウスのクリックとドラッグ操作をおこないます。<br></p>
+
+<p class="codeheader">
+MouseClickDrag "button", x1, y1, x2, y2 [, speed] <br>
+</p>
+<p>&nbsp;</p>
+
+<p><b>パラメータ</b></p>
+<table border="1" width="100%" cellspacing="0" cellpadding="3" bordercolor="#C0C0C0">
+  <tr>
+    <td width="15%">button</td>
+    <td width="85%">クリックするボタン： "left"、"right"、"middle"、"main"、"menu"、"primary"、"secondary"を指定できます。</td>
+  </tr>
+  <tr>
+   <td>x1, y1</td>
+   <td>ドラッグ開始位置のx/y座標</td>
+  </tr>
+  <tr>
+   <td>x2, y2</td>
+   <td>ドラッグ終了位置のx/y座標</td>
+  </tr>
+  <tr>
+   <td>speed</td>
+   <td><b>オプション：</b>1（最速）から100（最低速）で指定されるマウスの移動スピード。0を指定するとただちに移動します。デフォルトのスピードは10。</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>返し値</b></p>
+なし。<br>
+<p>&nbsp;</p>
+
+<p><b>注意</b></p>
+buttonパラメータに空の文字列を指定すると左ボタンがクリックされます。<br>
+<br>
+buttonパラメータがリストにない場合、oAutoIt.errorを1に設定します。<br>
+<br>
+コントロールパネルでマウスの右と左のボタン機能を交換した場合ボタンの働きが変わります。"Left"、"right"は交換されているかどうかに関らず常にそのボタンをクリックします。"primary" 、"main"ボタンは交換されているかどうかに関らずメインクリックをおこないます。 "secondary"、"menu"ボタンは交換されているかどうかに関らずコンテキストメニューの表示をおこないます。詳しくは<a href="MouseClick.htm#table">MouseClick</a> の表を参照<br>
+<br>
+<p>&nbsp;</p>
+
+<p><b>関連</b></p>
+<a href="MouseClick.htm">MouseClick</a>, <a href="MouseGetPosX.htm">MouseGetPosX</a>, <a href="MouseGetPosY.htm">MouseGetPosY</a>, <a href="MouseMove.htm">MouseMove</a>, <a href="AutoItSetOption.htm#MouseCoordMode">MouseCoordMode (Option)</a>
+<p>&nbsp;</p>
+
+<p><b>例</b></p>
+<p class="codebox">
+Set oAutoIt = WScript.CreateObject("AutoItX3.Control")<br>
+<br>
+; 左ボタンをクリックして（0,200）から（600, 700）へドラッグします。<br>
+oAutoIt.MouseClickDrag "left", 0, 200, 600, 700<br>
+<p>&nbsp;</p>
+
+</body>
+</html>

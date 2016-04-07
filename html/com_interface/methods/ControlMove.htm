@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Method ControlMove
+</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=shift-jis">
+  <link href="../../css/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Method Reference (COM)</h1>
+<font size="+1">ControlMove
+</font>
+<hr size="2">
+<p>ウィンドウ内でコントロールを動かします。<br></p>
+
+<p class="codeheader">
+ControlMove "title", "text", "controlID", x, y [, width [, height]]<br>
+</p>
+<p>&nbsp;</p>
+
+<p><b>パラメータ</b></p>
+<table border="1" width="100%" cellspacing="0" cellpadding="3" bordercolor="#C0C0C0">
+  <tr>
+    <td width="15%">title</td>
+    <td width="85%">対象となるウィンドウのタイトル</td>
+  </tr>
+  <tr>
+   <td>text</td>
+   <td>対象となるウィンドウのテキスト</td>
+  </tr>
+  <tr>
+   <td>controlID</td>
+   <td>対象となるコントロール。<a href="../../intro/controls.htm">Controls</a>を参照。</td>
+  </tr>
+  <tr>
+   <td>x</td>
+   <td>移動先のX座標</td>
+  </tr>
+  <tr>
+   <td>y</td>
+   <td>移動先のY座標</td>
+  </tr>
+  <tr>
+   <td>width</td>
+   <td><b>オプション：</b>変更後のコントロールの幅</td>
+  </tr>
+  <tr>
+   <td>height</td>
+   <td><b>オプション：</b>変更後のコントロールの高さ</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>返し値</b></p>
+<table width="100%">
+  <tr>
+    <td width="10%">成功:</td>
+    <td width="90%">1を返します。</td>
+  </tr>
+  <tr>
+    <td>失敗:</td>
+    <td>ウィンドウ/コントロールが見つからなかった場合0を返します。</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>注意</b></p>
+Control関数を使用する場合、名前の末尾にどのコントロールであるかを表す数字を付ける必要があります。例えば"MDIClient"と呼ばれるコントロールが2つある場合、"MDIClient1"と"MDIClient2"という具合にして参照します。<br>
+<br>
+<p>&nbsp;</p>
+
+<p><b>関連</b></p>
+<a href="ControlCommand.htm">ControlCommand</a>, <a href="WinMove.htm">WinMove</a>
+<p>&nbsp;</p>
+
+<p><b>例</b></p>
+<p class="codebox">
+Set oAutoIt = WScript.CreateObject("AutoItX3.Control")<br>
+oAutoIt.ControlMove "Untitled -", "", "MDIClient1", 0, 0, 200, 200<br>
+<p>&nbsp;</p>
+
+</body>
+</html>

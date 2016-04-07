@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Method MouseGetCursor
+</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=shift-jis">
+  <link href="../../css/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Method Reference (COM)</h1>
+<font size="+1">MouseGetCursor
+</font>
+<hr size="2">
+<p>現在のマウスカーソルのカーソルIDを返します。<br></p>
+
+<p class="codeheader">
+MouseGetCursor<br>
+</p>
+<p>&nbsp;</p>
+
+<p><b>パラメータ</b></p>
+なし。<br>
+<p>&nbsp;</p>
+
+<p><b>返し値</b></p>
+カーソルIDを返します。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 = UNKNOWN (不明)  (ポインティング、手掴みアイコンを含む)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 = APPSTARTING (アプリケーション開始)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2 = ARROW (矢印)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;3 = CROSS (十字)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;4 = HELP (ヘルプ)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;5 = IBEAM (I-字型)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;6 = ICON (アイコン)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;7 = NO (禁止)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;8 = SIZE (サイズ)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;9 = SIZEALL (全方向)<br>
+&nbsp;&nbsp;10 = SIZENESW (北東-南西方向サイズ)<br>
+&nbsp;&nbsp;11 = SIZENS (南北方向サイズ)<br>
+&nbsp;&nbsp;12 = SIZENWSE (北西-南東方向サイズ)<br>
+&nbsp;&nbsp;13 = SIZEWE (東西方向サイズ)<br>
+&nbsp;&nbsp;14 = UPARROW (上矢印)<br>
+&nbsp;&nbsp;15 = WAIT (待機)<br>
+<p>&nbsp;</p>
+
+<p><b>注意</b></p>
+なし。<br>
+<br>
+<p>&nbsp;</p>
+
+<p><b>関連</b></p>
+<a href="MouseGetPosX.htm">MouseGetPosX</a>, <a href="MouseGetPosY.htm">MouseGetPosY</a>
+<p>&nbsp;</p>
+
+<p><b>例</b></p>
+<p class="codebox">
+Set oAutoIt = WScript.CreateObject("AutoItX3.Control")<br>
+<br>
+oAutoIt.Sleep 2000&nbsp;&nbsp;'allow time to move mouse before reporting ID<br>
+cursor = MouseGetCursor()<br>
+WScript.Echo "ID = " & cursor<br>
+<p>&nbsp;</p>
+
+</body>
+</html>

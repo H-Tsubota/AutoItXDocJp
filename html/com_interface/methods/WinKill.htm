@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Method WinKill
+</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=shift-jis">
+  <link href="../../css/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Method Reference (COM)</h1>
+<font size="+1">WinKill
+</font>
+<hr size="2">
+<p>強制的にウィンドウを閉じます。<br></p>
+
+<p class="codeheader">
+WinKill "title" [, "text"]<br>
+</p>
+<p>&nbsp;</p>
+
+<p><b>パラメータ</b></p>
+<table border="1" width="100%" cellspacing="0" cellpadding="3" bordercolor="#C0C0C0">
+  <tr>
+    <td width="15%">title</td>
+    <td width="85%">閉じるウィンドウのタイトル</td>
+  </tr>
+  <tr>
+   <td>text</td>
+   <td><b>オプション：</b>閉じるウィンドウのテキスト。</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>返し値</b></p>
+なし。（成功・失敗関係なく常に1を返す）<br>
+<p>&nbsp;</p>
+
+<p><b>注意</b></p>
+この関数とWinCloseの違いは、WinKillはすみやかにウィンドウを閉じることができるということです。従ってユーザーはデータをセーブするかどうかたずねるダイアログに対応しなくてよくなります。またWinkillは最小化されたウィンドウ、隠されたウィンドウの両方に有効ですがウィンドウによってはWinCloseでしか閉じることができないものもあります（特にエクスプローラーウィンドウ）。<br>
+<br>
+<p>&nbsp;</p>
+
+<p><b>関連</b></p>
+<a href="WinActivate.htm">WinActivate</a>, <a href="WinClose.htm">WinClose</a>, <a href="WinSetState.htm">WinSetState</a>, <a href="ProcessClose.htm">ProcessClose</a>
+<p>&nbsp;</p>
+
+<p><b>例</b></p>
+<p class="codebox">
+Set oAutoIt = WScript.CreateObject("AutoItX3.Control")<br>
+oAutoIt.WinKill "Untitled - ", ""<br>
+<p>&nbsp;</p>
+
+</body>
+</html>

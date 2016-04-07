@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Method DriveMapDel
+</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=shift-jis">
+  <link href="../../css/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Method Reference (COM)</h1>
+<font size="+1">DriveMapDel
+</font>
+<hr size="2">
+<p>ネットワークドライブを切断します。<br></p>
+
+<p class="codeheader">
+DriveMapDel "device"<br>
+</p>
+<p>&nbsp;</p>
+
+<p><b>パラメータ</b></p>
+<table border="1" width="100%" cellspacing="0" cellpadding="3" bordercolor="#C0C0C0">
+  <tr>
+    <td width="15%">drive</td>
+    <td width="85%">切断するデバイス。例："O:"、"LPT1:"。</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>返し値</b></p>
+<table width="100%">
+  <tr>
+    <td width="10%">成功:</td>
+    <td width="90%">1を返します。</td>
+  </tr>
+  <tr>
+    <td>失敗:</td>
+    <td>切断に失敗した場合0を返します。</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>注意</b></p>
+マップされているドライブ文字がない場合、接続名(例：\\server\share)を切断に使用できます。<br>
+<br>
+<p>&nbsp;</p>
+
+<p><b>関連</b></p>
+<a href="DriveMapAdd.htm">DriveMapAdd</a>, <a href="DriveMapGet.htm">DriveMapGet</a>
+<p>&nbsp;</p>
+
+<p><b>例</b></p>
+<p class="codebox">
+Set oAutoIt = WScript.CreateObject("AutoItX3.Control")<br>
+<br>
+' ドライブXを\\myserver\stuffに現在のユーザーでマップ<br>
+oAutoIt.DriveMapAdd "X:", "\\myserver\stuff"<br>
+<br>
+' 切断<br>
+oAutoIt.DriveMapDel "X:"<br>
+<p>&nbsp;</p>
+
+</body>
+</html>

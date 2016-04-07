@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Method PixelChecksum
+
+</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=shift-jis">
+  <link href="../../css/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Method Reference (COM)</h1>
+<font size="+1">PixelChecksum
+
+</font>
+<hr size="2">
+<p>ピクセル領域のチェックサムを生成します。<br></p>
+
+<p class="codeheader">
+PixelChecksum left, top, right, bottom [, step]<br>
+</p>
+<p>&nbsp;</p>
+
+<p><b>パラメータ</b></p>
+<table border="1" width="100%" cellspacing="0" cellpadding="3" bordercolor="#C0C0C0">
+  <tr>
+    <td width="15%">left</td>
+    <td width="85%">長方形の左部座標</td>
+  </tr>
+  <tr>
+   <td>top</td>
+   <td>長方形の上部座標</td>
+  </tr>
+  <tr>
+   <td>right</td>
+   <td>長方形の右部座標</td>
+  </tr>
+  <tr>
+   <td>bottom</td>
+   <td>長方形の下部座標</td>
+  </tr>
+  <tr>
+   <td>step</td>
+   <td><b>オプション：</b>
+全てのピクセルではなく、与えられた1より大きい値おきにスキップした位置のピクセルを使ってチェックサムを生成します（高速化のため）。例えば、2を指定すると１つおきにピクセルをチェックします。デフォルトは1。</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>返し値</b></p>
+領域のチェックサム値を返します。<br>
+<p>&nbsp;</p>
+
+<p><b>注意</b></p>
+領域のチェックサム処理には大変時間ががかかります。できるだけ小さな領域を使用することでCPUの負荷を減らすことができます。マシンによってはスクリーン全体のチェックサム計算に何秒もかかることもあります!<br>
+<br>
+チェックサムでわかることは領域で"なにか"変化が起きたかどうかだけです　-　どのような変化が起きたかは知ることができません。<br>
+<br>
+1より大きいstep値を使用する場合、全てのピクセルを使用する場合に比べて小さな変化に対するチェックサムの信頼性が低下することを頭に留めておいてください。<br>
+<br>
+<p>&nbsp;</p>
+
+<p><b>関連</b></p>
+<a href="PixelChecksum.htm">PixelChecksum</a>, <a href="PixelGetColor.htm">PixelGetColor</a>, <a href="AutoItSetOption.htm#PixelCoordMode">PixelCoordMode (Option)</a>, <a href="PixelSearch.htm">PixelSearch</a>
+<p>&nbsp;</p>
+
+<p><b>例</b></p>
+<p class="codebox">
+Set oAutoIt = WScript.CreateObject("AutoItX3.Control")<br>
+<br>
+' 初期のチェックサムを取得します。<br>
+checksum = oAutoIt.PixelChecksum(0,0, 50,50)<br>
+<p>&nbsp;</p>
+
+</body>
+</html>

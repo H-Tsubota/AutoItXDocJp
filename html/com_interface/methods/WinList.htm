@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Method WinList
+</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=shift-jis">
+  <link href="../../css/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Method Reference (COM)</h1>
+<font size="+1">WinList
+</font>
+<hr size="2">
+<p>ウィンドウのリストを取得します。<br></p>
+
+<p class="codeheader">
+Winlist "title" [, "text"]<br>
+</p>
+<p>&nbsp;</p>
+
+<p><b>パラメータ</b></p>
+<table border="1" width="100%" cellspacing="0" cellpadding="3" bordercolor="#C0C0C0">
+  <tr>
+    <td width="15%">title </td>
+    <td width="85%">対象となるウィンドウのタイトル</td>
+  </tr>
+  <tr>
+   <td>text </td>
+   <td><b>オプション：</b>対象となるウィンドウのテキスト</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>返し値</b></p>
+<table width="100%">
+  <tr>
+    <td width="10%">成功:</td>
+    <td width="90%">ウィンドウの名前と対応するハンドルを格納した2次元配列を返します。
+    要素数は要素0,0に格納されます（例を参照）。</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>注意</b></p>
+なし。<br>
+<br>
+<p>&nbsp;</p>
+
+<p><b>関連</b></p>
+なし。
+<p>&nbsp;</p>
+
+<p><b>例</b></p>
+<p class="codebox">
+Set oAutoIt = WScript.CreateObject("AutoItX3.Control")<br>
+<br>
+' メモ帳ウィンドウの全てのインスタンスを取得<br>
+val = oAutoIt.WinList("[CLASS:Notepad]")<br>
+For i = 1 to val(0,0)<br>
+&nbsp;&nbsp;WScript.Echo "Title:" & val(0,i) & " - Handle:" & val(1,i)<br>
+Next<br>
+<br>
+' すべてのウィンドウを取得（数百にもなるでしょう！）<br>
+val = oAutoIt.WinList("[ALL]")<br>
+For i = 1 to val(0,0)<br>
+&nbsp;&nbsp;WScript.Echo "Title:" & val(0,i) & " - Handle:" & val(1,i)<br>
+Next<br>
+<p>&nbsp;</p>
+
+</body>
+</html>

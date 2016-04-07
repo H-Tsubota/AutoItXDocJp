@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Method ControlListView
+</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=shift-jis">
+  <link href="../../css/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Method Reference (COM)</h1>
+<font size="+1">ControlListView
+</font>
+<hr size="2">
+<p>ListView32 コントロールにコマンドを送信します。<br></p>
+
+<p class="codeheader">
+ControlListView "title", "text", "controlID", "command", "option1", "option2"<br>
+</p>
+<p>&nbsp;</p>
+
+<p><b>パラメータ</b></p>
+<table border="1" width="100%" cellspacing="0" cellpadding="3" bordercolor="#C0C0C0">
+  <tr>
+    <td width="15%">title</td>
+    <td width="85%">対象となるウィンドウのタイトル</td>
+  </tr>
+  <tr>
+   <td>text</td>
+   <td width="85%">対象となるウィンドウのテキスト</td>
+  </tr>
+  <tr>
+   <td>controlID</td>
+   <td>対象となるコントロール。<a href="../../intro/controls.htm">Controls</a>を参照。</td>
+  </tr>
+  <tr>
+   <td>command</td>
+   <td>コントロールに送信するコマンド（下表参照）</td>
+  </tr>
+  <tr>
+   <td>option1</td>
+   <td>コマンドによっては必要となる追加パラメータ。パラメータが必要ない場合は""を使用してください。</td>
+  </tr>
+  <tr>
+   <td>option2</td>
+   <td>コマンドによっては必要となる追加パラメータ。パラメータが必要ない場合は""を使用してください。</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>返し値</b></p>
+下表のコマンドによって異なります。エラーの場合（コマンド、ウィンドウ/コントロールの間違いなど）の場合 oAutoIt.errorを1にします。<br><br>
+すべてのアイテム/サブアイテムは0を基準とします。つまり、リストの最初のアイテム/サブアイテムが0、2番目が1、・・・となります。<br>
+ListView32 コントロールの&quot;詳細&quot;表示では、&quot;アイテム&quot;は&quot;行&quot;で、&quot;サブアイテム&quot; は&quot;列&quot;と考えることができます。<br>
+<table border="1" width="100%" cellspacing="0" cellpadding="3" bordercolor="#C0C0C0">
+  <tr>
+    <td width="40%"><b>コマンド、オプション1、オプション2</b></td>
+    <td width="60%"><b>処理</b></td>
+  </tr>
+  <tr>
+   <td>"DeSelect", From [, To]</td>
+   <td>1つまたはそれ以上のアイテムの選択を解除します。</td>
+  </tr>
+  <tr>
+   <td>"FindItem", "string to find" [, SubItem]</td>
+   <td>指定した文字列のアイテムのアイテム番号を返します。見つからなかった場合-1を返します。</td>
+  </tr>
+  <tr>
+   <td>"GetItemCount"</td>
+   <td>アイテムの数を返します。</td>
+  </tr>
+  <tr>
+   <td>"GetSelected" [, option]</td>
+   <td>選択されているアイテムのアイテム番号を格納した文字列を返します。option=0 (デフォルト) では一番最初のアイテムの番号のみ返されます。option=1 ではすべての選択されたアイテムのアイテム番号が｜で区切られて（例：&quot;0|3|4|10&quot;）返されます。アイテムが選択されていない場合、空の文字列""が返されます。</td>
+  </tr>
+  <tr>
+   <td>"GetSelectedCount"</td>
+   <td>選択されているアイテムの数を返します。</td>
+  </tr>
+  <tr>
+   <td>"GetSubItemCount"</td>
+   <td>サブアイテムの数を返します。</td>
+  </tr>
+  <tr>
+   <td>"GetText", Item, SubItem</td>
+   <td>アイテム/サブアイテムで指定した位置のテキストを返します。</td>
+  </tr>
+  <tr>
+   <td>"IsSelected", Item</td>
+   <td>指定したアイテムが選択されている場合1を返し、それ以外で0を返します。</td>
+  </tr>
+  <tr>
+   <td>"Select", From [, To]</td>
+   <td>1つまたはそれ以上のアイテムを選択します。</td>
+  </tr>
+  <tr>
+   <td>"SelectAll"</td>
+   <td>全てのアイテムを選択します。</td>
+  </tr>
+  <tr>
+   <td>"SelectClear"</td>
+   <td>全てのアイテムの選択を解除します。</td>
+  </tr>
+  <tr>
+   <td>"SelectInvert"</td>
+   <td>現在の選択状態を反転させます。</td>
+  </tr>
+  <tr>
+   <td>"ViewChange", "view"</td>
+   <td>現在の表示状態を切り替えます。有効な表示状態は"list", "details", "smallicons", "largeicons"です。</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>注意</b></p>
+なし。<br>
+<br>
+<p>&nbsp;</p>
+
+<p><b>関連</b></p>
+<a href="ControlCommand.htm">ControlCommand</a>, <a href="ControlDisable.htm">ControlDisable</a>, <a href="ControlEnable.htm">ControlEnable</a>, <a href="ControlFocus.htm">ControlFocus</a>, <a href="../../html\com_interface\methods\ControlGetPos.htm">ControlGetPos</a>, <a href="ControlGetText.htm">ControlGetText</a>, <a href="ControlHide.htm">ControlHide</a>, <a href="ControlClick.htm">ControlClick</a>, <a href="ControlMove.htm">ControlMove</a>, <a href="ControlSetText.htm">ControlSetText</a>, <a href="ControlShow.htm">ControlShow</a>, <a href="ControlTreeView.htm">ControlTreeView</a>, <a href="StatusbarGetText.htm">StatusbarGetText</a>, <a href="WinMenuSelectItem.htm">WinMenuSelectItem</a>, <a href="WinGetClassList.htm">WinGetClassList</a>
+<p>&nbsp;</p>
+
+<p><b>例</b></p>
+<p class="codebox">
+Set oAutoIt = WScript.CreateObject("AutoItX3.Control")<br>
+oAutoIt.ControlListView "C:\Program Files\NSIS", "", "SysListView321", "SelectAll", "", ""<br>
+oAutoIt.ControlListView "C:\Program Files\NSIS", "", "SysListView321", "Deselect", "2", "5"<br>
+<p>&nbsp;</p>
+
+</body>
+</html>

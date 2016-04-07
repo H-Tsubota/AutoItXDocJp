@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Method ProcessSetPriority
+</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=shift-jis">
+  <link href="../../css/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Method Reference (COM)</h1>
+<font size="+1">ProcessSetPriority
+</font>
+<hr size="2">
+<p>プロセスの優先度を変更します。<br></p>
+
+<p class="codeheader">
+ProcessSetPriority "process", priority<br>
+</p>
+<p>&nbsp;</p>
+
+<p><b>パラメータ</b></p>
+<table border="1" width="100%" cellspacing="0" cellpadding="3" bordercolor="#C0C0C0">
+  <tr>
+    <td width="15%">process</td>
+    <td width="85%">変更するプロセスの名前もしくはPID</td>
+  </tr>
+  <tr>
+   <td>priority</td>
+   <td>
+”優先度の設定”で設定する値を指定するフラグ<br>
+0 - アイドリング/低<br>
+1 - 通常以下（Windows 95/98/MEではサポートされていません）<br>
+2 - 通常<br>
+3 - 通常以上（Windows 95/98/MEではサポートされていません）<br>
+4 - 高<br>
+5 - リアルタイム (注意して使用してください。システムが不安定になります。)</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>返し値</b></p>
+成功: 1を返します。<br>
+失敗: 
+0を返しoAutoIt.errorを1に設定します。サポートされていない優先度を設定しようとした場合oAutoIt.errorを2に設定します。<br>
+<p>&nbsp;</p>
+
+<p><b>注意</b></p>
+上記の優先度"通常以上"と"通常以下"はWindows 95/98/MEではサポートされていません。これらのプラットフォーム上で使用した場合、この関数はoAutoIt.errorを2に設定して失敗します。<br>
+<br>
+<p>&nbsp;</p>
+
+<p><b>関連</b></p>
+
+<p>&nbsp;</p>
+
+<p><b>例</b></p>
+<p class="codebox">
+Set oAutoIt = WScript.CreateObject("AutoItX3.Control")<br>
+oAutoIt.Run "Notepad.exe"<br>
+oAutoIt.ProcessSetPriority "notepad.exe", 0<br>
+' メモ帳の優先度をアイドリング/低に設定した<br>
+<br>
+<p>&nbsp;</p>
+
+</body>
+</html>

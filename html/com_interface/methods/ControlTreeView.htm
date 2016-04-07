@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Method ControlTreeView
+</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=shift-jis">
+  <link href="../../css/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Method Reference (COM)</h1>
+<font size="+1">ControlTreeView
+</font>
+<hr size="2">
+<p>TreeView32コントロールにコマンドを送信します。<br></p>
+
+<p class="codeheader">
+ControlTreeView "title", "text", "controlID", "command", "option1", "option2"<br>
+</p>
+<p>&nbsp;</p>
+
+<p><b>パラメータ</b></p>
+<table border="1" width="100%" cellspacing="0" cellpadding="3" bordercolor="#C0C0C0">
+  <tr>
+    <td width="15%">title</td>
+    <td width="85%">対象となるウィンドウのタイトル</td>
+  </tr>
+  <tr>
+   <td>text</td>
+   <td width="85%">対象となるウィンドウのテキスト</td>
+  </tr>
+  <tr>
+   <td>controlID</td>
+   <td>対象となるコントロール。<a href="../../intro/controls.htm">Controls</a>を参照。</td>
+  </tr>
+  <tr>
+   <td>command</td>
+   <td>コントロールに送信するコマンド（下記を参照）。</td>
+  </tr>
+  <tr>
+   <td>option1</td>
+   <td>コマンドによっては必要となる追加パラメータ。パラメータが必要ない場合は""を使用してください。</td>
+  </tr>
+  <tr>
+   <td>option2</td>
+   <td>コマンドによっては必要となる追加パラメータ。パラメータが必要ない場合は""を使用してください。</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>返し値</b></p>
+下表のコマンドによって異なります。エラーの場合（コマンド、ウィンドウ/コントロールの間違いなど）の場合 oAutoIt.errorを1にします。
+<br><br>
+<table border="1" width="100%" cellspacing="0" cellpadding="3" bordercolor="#C0C0C0">
+  <tr>
+    <td width="40%"><b>コマンド、オプション1、オプション2</b></td>
+    <td width="60%"><b>動作</b></td>
+  </tr>
+  <tr>
+   <td>"Check", "item"</td>
+   <td> (アイテムがサポートしている場合) アイテムを調べます。</td>
+  </tr>
+  <tr>
+   <td>"Collapse", "item"</td>
+   <td>アイテムをたたんで子アイテムを非表示にします。</td>
+  </tr>
+  <tr>
+   <td>"Exists", "item"</td>
+   <td>アイテムが存在する場合、1を返します。それ以外の場合は0。</td>
+  </tr>
+  <tr>
+   <td>"Expand", "item"</td>
+   <td>アイテムを展開して子アイテムを表示します。</td>
+  </tr>
+  <tr>
+   <td>"GetItemCount", "item"</td>
+   <td>選択されたアイテムの子アイテムの数を返します。</td>
+  </tr>
+  <tr>
+   <td>"GetSelected" [, UseIndex]</td>
+   <td>アイテムのテキスト（UseIndexが1の場合はインデックス）を使って現在選択されているアイテムの参照を返します。</td>
+  </tr>
+  <tr>
+   <td>"GetText", "item"</td>
+   <td>アイテムのテキストを返します。</td>
+  </tr>
+  <tr>
+   <td>"IsChecked"</td>
+   <td>アイテムの状態を返します。1:チェックされている、0:チェックされていない、-1:チェックボックスではない</td>
+  </tr>
+  <tr>
+   <td>"Select", "item"</td>
+   <td>アイテムを選択します。</td>
+  </tr>
+  <tr>
+   <td>"Uncheck", "item"</td>
+   <td>（アイテムがサポートしている場合）アイテムを非選択にします。</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>注意</b></p>
+なし。<br>
+<br>
+<p>&nbsp;</p>
+
+<p><b>関連</b></p>
+<a href="ControlCommand.htm">ControlCommand</a>, <a href="ControlDisable.htm">ControlDisable</a>, <a href="ControlEnable.htm">ControlEnable</a>, <a href="ControlFocus.htm">ControlFocus</a>, <a href="../../html\com_interface\methods\ControlGetPos.htm">ControlGetPos</a>, <a href="ControlGetText.htm">ControlGetText</a>, <a href="ControlHide.htm">ControlHide</a>, <a href="ControlClick.htm">ControlClick</a>, <a href="ControlListView.htm">ControlListView</a>, <a href="ControlMove.htm">ControlMove</a>, <a href="ControlSetText.htm">ControlSetText</a>, <a href="ControlShow.htm">ControlShow</a>, <a href="StatusbarGetText.htm">StatusbarGetText</a>, <a href="WinMenuSelectItem.htm">WinMenuSelectItem</a>, <a href="WinGetClassList.htm">WinGetClassList</a>
+<p>&nbsp;</p>
+
+<p><b>例</b></p>
+<p class="codebox">
+
+<p>&nbsp;</p>
+
+</body>
+</html>

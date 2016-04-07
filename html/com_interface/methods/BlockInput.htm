@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Method BlockInput
+</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=shift-jis">
+  <link href="../../css/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Method Reference (COM)</h1>
+<font size="+1">BlockInput
+</font>
+<hr size="2">
+<p>マウスとキーボードの無効/有効を切り替えます。<br></p>
+
+<p class="codeheader">
+BlockInput flag<br>
+</p>
+<p>&nbsp;</p>
+
+<p><b>パラメータ</b></p>
+<table border="1" width="100%" cellspacing="0" cellpadding="3" bordercolor="#C0C0C0">
+  <tr>
+    <td width="15%">flag</td>
+    <td width="85%">1 = ユーザー入力を無効にします。<br>
+       0 = ユーザー入力を有効にします。</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>返し値</b></p>
+なし。<br>
+<p>&nbsp;</p>
+
+<p><b>注意</b></p>
+BlockInputが有効な場合、Altキーを送信することはできません!<br>
+下の表はBlockInputがWindowsの各バージョンでどのように動作するかをまとめたものです。またWindowsAPIの特性から全てのバージョンで<i>Ctrl+Alt+Del</i>によって入力を有効にすることができます。<br>
+<br>
+<table width="100%" border="1">
+  <tr>
+    <td><b><i>OS</b></i></td>
+    <td><b><i>"BlockInput"の結果</b></i></td>
+  </tr>
+  <tr>
+    <td>Windows 95</td>
+    <td>効果なし</td>
+  </tr>
+  <tr>
+    <td>Windows 98/Me</td>
+    <td>
+    ユーザーによる入力がブロックされるだけでなく、AutoItによるマウス入力、キーボードもできなくなります。</td>
+  </tr>
+  <tr>
+    <td>Windows NT 4 (ServicePack 6 以前)</td>
+    <td>効果なし</td>
+  </tr>
+  <tr>
+    <td>Windows NT 4 (ServicePack 6 以降)</td>
+    <td>ユーザーによる入力はブロックされます。AutoItによる入力のほとんどが可能です。</td>
+  </tr>
+  <tr>
+    <td>Windows 2000/XP</td>
+    <td>ユーザーによる入力はブロックされます。AutoItによる入力のほとんどが可能です。</td>
+  </tr>
+</table><br>
+Windows 98/MeではBlockInputを有効にした場合でもWinMove()などの関数は動作することに注意してください。<br>
+<br>
+<p>&nbsp;</p>
+
+<p><b>関連</b></p>
+<a href="Send.htm">Send</a>
+<p>&nbsp;</p>
+
+<p><b>例</b></p>
+<p class="codebox">
+Set oAutoIt = WScript.CreateObject("AutoItX3.Control")<br>
+<br>
+oAutoIt.BlockInput 1<br>
+<br>
+oAutoIt.Run "notepad.exe"<br>
+oAutoIt.WinWaitActive "Untitled - Notepad"<br>
+oAutoIt.Send "{F5}"<br>
+<br>
+oAutoIt.BlockInput 0<br>
+<p>&nbsp;</p>
+
+</body>
+</html>

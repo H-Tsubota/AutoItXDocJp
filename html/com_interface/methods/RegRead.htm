@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Method RegRead
+</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=shift-jis">
+  <link href="../../css/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Method Reference (COM)</h1>
+<font size="+1">RegRead
+</font>
+<hr size="2">
+<p>レジストリから値を読み取ります。<br></p>
+
+<p class="codeheader">
+RegRead "keyname", "valuename"<br>
+</p>
+<p>&nbsp;</p>
+
+<p><b>パラメータ</b></p>
+<table border="1" width="100%" cellspacing="0" cellpadding="3" bordercolor="#C0C0C0">
+  <tr>
+    <td width="15%">keyname</td>
+    <td width="85%">読みとるレジストリキー</td>
+  </tr>
+  <tr>
+   <td>valuename</td>
+   <td>読みとる値</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>返し値</b></p>
+<table width="100%">
+  <tr>
+    <td width="10%">成功:</td>
+    <td width="90%">要求されたレジストリの値</td>
+  </tr>
+  <tr>
+    <td>失敗:</td>
+    <td>数値1を返し、 oAutoIt.errorフラグを設定します:</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>1 要求されたキーを開けなかった場合</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>-1 要求された値を開けなかった場合</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>-2 値の型がサポートされていない場合</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>注意</b></p>
+レジストリキーは "HKEY_LOCAL_MACHINE" ("HKLM")、"HKEY_USERS" ("HKU")、"HKEY_CURRENT_USER" ("HKCU")、"HKEY_CLASSES_ROOT" ("HKCR")、"HKEY_CURRENT_CONFIG" ("HKCC")のいずれかから開始されなければいけません。<br>
+<br>
+AutoIt supports registry keys of type REG_BINARY, REG_SZ, REG_MULTI_SZ, REG_EXPAND_SZ, and REG_DWORD.<br>
+<br>
+<b>(Default)</b>値にアクセスするためには、<b>""</b>(空文字列)をvaluenameに使用してください。<br>
+<br>
+REG_BINARYキーを読み込む場合、結果は16進数文字の文字列で返されます。例えば01,a9,ff,77のREG_BINARY値は文字列"01A9FF77"として読み込まれます。<br>
+<br>
+REG_MULTI_SZキーを読み込む場合、複数行のエントリーはラインフィード文字で分割されます。<br>
+<br>
+keynameに"\\computername\keyname"形式を使用することでリモートのレジストリにアクセスすることが可能です。この機能を使用するためにはNT/2000/XP/2003の正しいアクセス権限を持っていなければなりません。9x系のOSを使用している場合、リモートのPCにはリモートレジストリサービスが最初にインストールされている必要があります（Microsoft Knowledge Base Article - 141460を参照）。<br>
+<br>
+<p>&nbsp;</p>
+
+<p><b>関連</b></p>
+<a href="../../html\com_interface\methods\RegDelete.htm">RegDelete</a>, <a href="RegWrite.htm">RegWrite</a>, <a href="../../html\com_interface\methods\StringSplit.htm">StringSplit</a>
+<p>&nbsp;</p>
+
+<p><b>例</b></p>
+<p class="codebox">
+Set oAutoIt = WScript.CreateObject("AutoItX3.Control")<br>
+var = oAutoIt.RegRead("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion", "ProgramFilesDir")<br>
+WScript.Echo "Program files are in:" & var<br>
+<br>
+<p>&nbsp;</p>
+
+</body>
+</html>

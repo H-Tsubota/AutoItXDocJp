@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<head>
+  <title>Using the COM Interface</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=shift-jis">
+  <link href="../css/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Using the COM Interface </h1>
+<p>AutoItXのCOMインターフェイスを使う前には&quot;レジスタへの登録&quot;が必要です(フルバージョンのAutoItをインストールしている場合、自動で既に終わっています。ただしAutoItXだけを個別に使用する場合には手動での登録作業が必要です)。</p>
+<p>&nbsp;</p>
+<p>COMインターフェイスの登録:</p>
+<p>1. コマンドプロンプトを開きます</p>
+<p>2. (CDコマンドを使って)<strong>AutoItX3.dll</strong>のあるディレクトリまで移動します</p>
+<p>3. <strong>regsvr32.exe AutoItX3.dll</strong>と入力してエンターキーを押します</p>
+<p>&nbsp;</p>
+<p>AutoItXコントロールの名前は<strong>AutoItX3.Control</strong>です</p>
+<p>&nbsp;</p>
+<p>VBScriptからコントロールのRunメソッドを呼ぶ例は以下のようになります:</p>
+<p class="codebox">Set oAutoIt = WScript.CreateObject(&quot;AutoItX3.Control&quot;)<br>
+oAutoIt.Run(&quot;notepad.exe&quot;)</p>
+<p>&nbsp;</p>
+
+</body>
+</html>

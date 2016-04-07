@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Method AutoItSetOption
+</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=shift-jis">
+  <link href="../../css/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Method Reference (COM)</h1>
+<font size="+1">AutoItSetOption
+</font>
+<hr size="2">
+<p>多くの種類のAutoItの関数/パラメータのオペレーション方法を変更します。<br></p>
+
+<p class="codeheader">
+AutoItSetOption "option", param<br>
+</p>
+<p>&nbsp;</p>
+
+<p><b>パラメータ</b></p>
+<table border="1" width="100%" cellspacing="0" cellpadding="3" bordercolor="#C0C0C0">
+  <tr>
+    <td width="15%">option</td>
+    <td width="85%">変更されるオプション。"注意"を参照。</td>
+  </tr>
+  <tr>
+   <td>param</td>
+   <td>パラメータ (optionによって異なる)。"注意"を参照。</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>返し値</b></p>
+変更前の設定値を返します。<br>
+<p>&nbsp;</p>
+
+<p><b>注意</b></p>
+AutoItSetOptionの代わりにOptを使うこともできます。<br>
+<br>
+要求されたオプションが道のものだった場合、AutoItはエラーメッセージを出力して停止します。
+オプションは以下のとおりです:<br>
+<table border="1" width="100%" cellspacing="0" cellpadding="3" bordercolor="#C0C0C0">
+  <tr>
+    <td width="15%"><b>Option</b></td>
+    <td width="85%"><b>Param</b></td>
+  </tr>
+  <tr>
+   <td>CaretCoordMode</td>
+   <td><a name="CaretCoordMode"></a>キャレット関数での座標指定方法を設定します。絶対座標もしくは現在のアクティブウィンドウに対する相対座標。<br>
+       0 = アクティブウィンドウに対する相対座標<br>
+       1 = スクリーン絶対座標（デフォルト）<br>
+       2 = アクティブウィンドウのクライアント領域に対する相対座標</td>
+  </tr>
+
+<tr>
+   <td>MouseClickDelay</td>
+   <td><a name="MouseClickDelay"></a>マウスクリックの間隔を変更します。<br>
+       ミリ秒単位での停止時間 (デフォルト=10)</td>
+  </tr>
+  <tr>
+   <td>MouseClickDownDelay</td>
+   <td><a name="MouseClickDownDelay"></a>クリック時の押してる時間の長さを変更します。<br>
+       ミリ秒単位での停止時間 (デフォルト=10)</td>
+  </tr>
+  <tr>
+   <td>MouseClickDragDelay</td>
+   <td><a name="MouseClickDragDelay"></a>
+   マウスドラッグ処理の開始/終了時の一時停止の長さを変更します。<br>
+       ミリ秒単位での停止時間 (デフォルト=250)</td>
+  </tr>
+  <tr>
+   <td>MouseCoordMode</td>
+   <td><a name="MouseCoordMode"></a>マウス関数での座標指定方法を設定します。絶対座標もしくは現在のアクティブウィンドウに対する相対座標です。<br>
+       0 = アクティブウィンドウに対する相対座標<br>
+       1 = スクリーン絶対座標（デフォルト）<br>
+       2 = アクティブウィンドウのクライアント領域に対する相対座標</td>
+  </tr>
+  <tr>
+   <td>PixelCoordMode</td>
+   <td><a name="PixelCoordMode"></a>ピクセル関数での座標指定方法を設定します。絶対座標もしくは現在のアクティブウィンドウに対する相対座標です。<br>
+       0 = アクティブウィンドウに対する相対座標<br>
+       1 = スクリーン絶対座標（デフォルト）<br>
+       2 = アクティブウィンドウのクライアント領域に対する相対座標</td>
+  </tr>
+  <tr>
+   <td>SendAttachMode</td>
+   <td><a name="SendAttachMode"></a>
+Send()関数使用時にAutoItを入力スレッドにアタッチさせるかどうか指定します。アタッチしない場合(デフォルトモード=0)、NT4環境下ではCapsLock、ScrolLlock 、NumLockの状態取得の信頼性が下がります。一方でアタッチモード=1を設定した場合はSend("{... down/up}")句が動作せず、"ハングアップ"したウィンドウにキーストロークを送信する際に問題が起こります。ControlSend()は常にアタッチをおこない、このモードの影響を受けません。<br>
+       0 = アタッチしない (デフォルト)<br>
+       1 = アタッチする</td>
+  </tr>
+  <tr>
+   <td>SendCapslockMode</td>
+   <td><a name="SendCapslockMode"></a>Sendの実行前/後にcapslockの切り替え/復元をおこなうかどうか指定します。<br>
+       0 = 切り替え/復元をおこなわない<br>
+       1 = 切り替え/復元をおこう(デフォルト)</td>
+  </tr>
+  <tr>
+   <td>SendKeyDelay</td>
+   <td><a name="SendKeyDelay"></a>
+   キーストローク送信時のキー入力の間隔を変更します。<br>
+   ミリ秒単位での停止時間 (デフォルト=5)。0を使うとうまく動作しない場合があります。代わりに1を使ってください。</td>
+  </tr>
+  <tr>
+   <td>SendKeyDownDelay</td>
+   <td><a name="SendKeyDownDelay"></a>キーストローク中のキーを押してから離すまでの時間を変更します。キー入力を記録するアプリケーション（多くのゲーム）では デフォルト値より長い値を設定する必要があります。<br>
+       ミリ秒単位での停止時間 (デフォルト=1)</td>
+  </tr>
+  
+ <tr>
+   <td>WinDetectHiddenText</td>
+   <td><a name="WinDetectHiddenText"></a>ウィンドウの検索をする関数で隠されたウィンドウテキストを"見る"かどうか指定します。<br>
+       0 = 隠されたテキストは無視（デフォルト）<br>
+       1 = 隠されたテキストも見る</td>
+  </tr>
+  <tr>
+   <td>WinSearchChildren</td>
+   <td><a name="WinSearchChildren"></a>
+   ウィンドウ検索時に子ウィンドウもトップレベルウィンドウと同様に検索するかどうかを指定します。<br>
+       0 = トップレベルウィンドウのみ検索（デフォルト）<br>
+       1 = トップレベルウィンドウと子ウィンドウを検索</td>
+  </tr>
+  <tr>
+   <td>WinTextMatchMode</td>
+   <td><a name="WinTextMatchMode"></a>検索作業でのウィンドウテキスト一致条件を変更します。<br>
+       1 = 完全 / スローモード(デフォルト)<br>
+       2 = クイックモード<br>
+クイックモードではAutoItはダイアログテキスト、ボタンテキストとコントロールのキャプションのみ"見"ます。デフォルトのモードではさらに多くのテキストが検査されます（たとえばメモ帳ウィンドウだとその中身など）<br>
+もし多くのウィンドウを検索する際にパフォーマンスの問題が起きた場合、"クイック"モードに変更することで改善できるかもしれません。</td>
+  </tr>
+  <tr>
+   <td>WinTitleMatchMode</td>
+   <td><a name="WinTitleMatchMode"></a>検索作業でのウィンドウ名一致条件を変更します。<br>
+	   1 = 前方一致（デフォルト）<br>
+       2 = 部分一致<br>
+       3 = 完全一致<br>
+       4 = アドバンスモード。<a href="../../intro/windowsadvanced.htm">Window Titles & Text (Advanced)</a>を参照。</td>
+  </tr>
+  <tr>
+   <td>WinWaitDelay</td>
+   <td><a name="WinWaitDelay"></a>ウィンドウ関連関数成功後の停止時間を変更します。<br>
+       ミリ秒単位での停止時間 (デフォルト=250)</td>
+  </tr>
+</table><br>
+<p>&nbsp;</p>
+
+<p><b>関連</b></p>
+たくさん！ 
+<p>&nbsp;</p>
+
+<p><b>例</b></p>
+<p class="codebox">
+Set oAutoIt = WScript.CreateObject("AutoItX3.Control")<br>
+oldvalue = oAutoIt.Opt("SendAttachMode", 0)<br>
+<p>&nbsp;</p>
+
+</body>
+</html>

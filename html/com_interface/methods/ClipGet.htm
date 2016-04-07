@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Method ClipGet
+</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=shift-jis">
+  <link href="../../css/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Method Reference (COM)</h1>
+<font size="+1">ClipGet
+</font>
+<hr size="2">
+<p>クリップボードからテキストを取得します。<br></p>
+
+<p class="codeheader">
+ClipGet<br>
+</p>
+<p>&nbsp;</p>
+
+<p><b>パラメータ</b></p>
+なし。<br>
+<p>&nbsp;</p>
+
+<p><b>返し値</b></p>
+<table width="100%">
+  <tr>
+    <td width="10%">成功:</td>
+    <td width="90%">クリップボード上のテキストを文字列として返します。</td>
+  </tr>
+  <tr>
+    <td>失敗:</td>
+    <td>クリップボードが空の場合、テキストでない内容の場合oAutoIt.errorを1に設定します。</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<p><b>注意</b></p>
+なし。<br>
+<br>
+<p>&nbsp;</p>
+
+<p><b>関連</b></p>
+<a href="ClipPut.htm">ClipPut</a>
+<p>&nbsp;</p>
+
+<p><b>例</b></p>
+<p class="codebox">
+Set oAutoIt = WScript.CreateObject("AutoItX3.Control")<br>
+<br>
+text = oAutoIt.ClipGet()<br>
+WScript.Echo "Clipboard contains:" & text<br>
+<p>&nbsp;</p>
+
+</body>
+</html>
